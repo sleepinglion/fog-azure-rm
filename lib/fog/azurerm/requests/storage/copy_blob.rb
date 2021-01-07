@@ -16,6 +16,10 @@ module Fog
 
           Fog::Logger.debug "Copying blob: x-ms-copy-id: #{copy_id}, x-ms-copy-status: #{copy_status}"
           [copy_id, copy_status]
+          end
+
+        def copy_object(source_container, source_blob, target_container, target_blob, options = {})
+          copy_blob(target_container, target_blob, source_container, source_blob, options)
         end
       end
 
